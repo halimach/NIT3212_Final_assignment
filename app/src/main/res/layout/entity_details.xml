@@ -7,48 +7,49 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/itemOne"
+        android:id="@+id/sportName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="itemOne"
+        android:text="Sport Name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/itemTwo"
+        android:id="@+id/playerCount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Common Name"
-        app:layout_constraintTop_toBottomOf="@id/itemOne"
+        android:text="Player Count"
+        app:layout_constraintTop_toBottomOf="@id/sportName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/itemThree"
+        android:id="@+id/fieldType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Care Level"
-        app:layout_constraintTop_toBottomOf="@id/itemTwo"
+        android:text="Field Type"
+        app:layout_constraintTop_toBottomOf="@id/playerCount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/itemFour"
+        android:id="@+id/olympicSport"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Light Requirement"
-        app:layout_constraintTop_toBottomOf="@id/itemThree"
+        android:text="Olympic Sport"
+        app:layout_constraintTop_toBottomOf="@id/fieldType"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
-        android:id="@+id/itemFive"
+        android:id="@+id/description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Description"
-        app:layout_constraintTop_toBottomOf="@id/itemFour"
+        app:layout_constraintTop_toBottomOf="@id/olympicSport"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

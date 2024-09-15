@@ -5,10 +5,10 @@ import android.os.Parcelable
 import com.squareup.moshi.Json
 
 data class Entity(
-    @Json(name = "itemOne") val itemOne: String,
-    @Json(name = "itemTwo") val itemTwo: String,
-    @Json(name = "itemThree") val itemThree: String,
-    @Json(name = "itemFour") val itemFour: String,
+    @Json(name = "sportName") val sportName: String,
+    @Json(name = "playerCount") val playerCount: String,
+    @Json(name = "fieldType") val fieldType: String,
+    @Json(name = "olympicSport") val olympicSport: String,
     @Json(name = "description") val description: String
 ) : Parcelable {
 
@@ -21,10 +21,10 @@ data class Entity(
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(itemOne)
-        parcel.writeString(itemTwo)
-        parcel.writeString(itemThree)
-        parcel.writeString(itemFour)
+        parcel.writeString(sportName)
+        parcel.writeString(playerCount)
+        parcel.writeString(fieldType)
+        parcel.writeString(olympicSport)
         parcel.writeString(description)
     }
 

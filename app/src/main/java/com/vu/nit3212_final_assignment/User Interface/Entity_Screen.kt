@@ -14,17 +14,18 @@ class Entity_Screen : AppCompatActivity() {
 
         val selectedEntity = intent.getParcelableExtra<Entity>("selectedEntity")
 
-        val itemOne = findViewById<TextView>(R.id.itemOne)
-        val itemTwo = findViewById<TextView>(R.id.itemTwo)
-        val itemThree = findViewById<TextView>(R.id.itemThree)
-        val itemFour = findViewById<TextView>(R.id.itemFour)
-        val itemFive = findViewById<TextView>(R.id.itemFive)
+        val sportNameTextView = findViewById<TextView>(R.id.sportName)
+        val playerCountTextView = findViewById<TextView>(R.id.playerCount)
+        val fieldTypeTextView = findViewById<TextView>(R.id.fieldType)
+        val olympicSportTextView = findViewById<TextView>(R.id.olympicSport)
+        val descriptionTextView = findViewById<TextView>(R.id.description)
 
         selectedEntity?.let {
-            itemOne.text = it.itemOne
-            itemTwo.text = it.itemTwo
-            itemThree.text = it.itemThree
-            itemFour.text = it.itemFour
+            sportNameTextView.text = it.sportName
+            playerCountTextView.text = it.playerCount
+            fieldTypeTextView.text = it.fieldType
+            olympicSportTextView.text = it.olympicSport
+            descriptionTextView.text = it.description
 
         }
     }

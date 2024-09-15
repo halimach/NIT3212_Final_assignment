@@ -29,18 +29,17 @@ class EntityAdapter(
         entityList = newList
         notifyDataSetChanged()
     }
-
     class EntityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val itemOne: TextView = itemView.findViewById(R.id.itemOne)
-        private val itemTwo: TextView = itemView.findViewById(R.id.itemTwo)
-        private val itemThree: TextView = itemView.findViewById(R.id.itemThree)
-        private val itemFour: TextView = itemView.findViewById(R.id.itemFour)
+        private val sportName: TextView = itemView.findViewById(R.id.sportName)
+        private val playerCount: TextView = itemView.findViewById(R.id.playerCount)
+        private val fieldType: TextView = itemView.findViewById(R.id.fieldType)
+        private val olympicSport: TextView = itemView.findViewById(R.id.olympicSport)
 
         fun bind(entity: Entity, onItemClick: (Entity) -> Unit) {
-            itemOne.text = entity.itemOne
-            itemTwo.text = entity.itemTwo
-            itemThree.text = entity.itemThree
-            itemFour.text = entity.itemFour
+            sportName.text = entity.sportName
+            playerCount.text = entity.playerCount
+            fieldType.text = entity.fieldType
+            olympicSport.text = entity.olympicSport
             itemView.setOnClickListener { onItemClick(entity) }
         }
     }

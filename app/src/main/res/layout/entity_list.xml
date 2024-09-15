@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--Entity Layout -->
+<!-- Entity Layout -->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,39 +8,39 @@
     android:padding="16dp">
 
     <TextView
-        android:id="@+id/itemOne"
+        android:id="@+id/sportName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Item"
+        android:text="Sport Name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/itemTwo"
+        android:id="@+id/playerCount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Item"
+        android:text="Player Count"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemOne"
+        app:layout_constraintTop_toBottomOf="@id/sportName"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/itemThree"
+        android:id="@+id/fieldType"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Item"
+        android:text="Field Type"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemTwo"
+        app:layout_constraintTop_toBottomOf="@id/playerCount"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/itemFour"
+        android:id="@+id/olympicSport"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Item "
+        android:text="Olympic Sport"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/itemThree"
+        app:layout_constraintTop_toBottomOf="@id/fieldType"
         app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
