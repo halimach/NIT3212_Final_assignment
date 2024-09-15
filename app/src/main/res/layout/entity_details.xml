@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/itemOne"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="itemOne"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemTwo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Common Name"
+        app:layout_constraintTop_toBottomOf="@id/itemOne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemThree"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Care Level"
+        app:layout_constraintTop_toBottomOf="@id/itemTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemFour"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Light Requirement"
+        app:layout_constraintTop_toBottomOf="@id/itemThree"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/itemFive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        app:layout_constraintTop_toBottomOf="@id/itemFour"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
