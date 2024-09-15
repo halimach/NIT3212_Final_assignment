@@ -1,20 +1,20 @@
-package com.vu.nit3212_final_assignment.User
+package com.vu.nit3212_final_assignment.user
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.assessment2.R
-import com.example.assessment2.data.Entity
+import com.vu.nit3212_final_assignment.R
+import com.vu.nit3212_final_assignment.data.Entity
 
-class Entity_Adapter(
+class EntityAdapter(
     private var entityList: List<Entity>,
     private val onItemClick: (Entity) -> Unit
 ) : RecyclerView.Adapter<EntityAdapter.EntityViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EntityViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_plant, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.entity_list, parent, false)
         return EntityViewHolder(view)
     }
 
@@ -25,24 +25,24 @@ class Entity_Adapter(
 
     override fun getItemCount(): Int = entityList.size
 
-
     fun updateList(newList: List<Entity>) {
         entityList = newList
         notifyDataSetChanged()
     }
 
     class EntityViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val itemOne: TextView = itemView.findViewById(R.id.tv_scientific_name)
-        private val itemTwo: TextView = itemView.findViewById(R.id.tv_common_name)
-        private val itemThree: TextView = itemView.findViewById(R.id.tv_care_level)
-        private val itemFour: TextView = itemView.findViewById(R.id.tv_light_requirement)
+        private val itemOne: TextView = itemView.findViewById(R.id.itemOne)
+        private val itemTwo: TextView = itemView.findViewById(R.id.itemTwo)
+        private val itemThree: TextView = itemView.findViewById(R.id.itemThree)
+        private val itemFour: TextView = itemView.findViewById(R.id.itemFour)
 
         fun bind(entity: Entity, onItemClick: (Entity) -> Unit) {
-            itemOne.text = entity.scientificName
-            itemTwo.text = entity.commonName
-            itemThree.text = entity.careLevel
-            itemFour.text = entity.lightRequirement
+            itemOne.text = entity.itemOne
+            itemTwo.text = entity.itemTwo
+            itemThree.text = entity.itemThree
+            itemFour.text = entity.itemFour
             itemView.setOnClickListener { onItemClick(entity) }
         }
     }
 }
+

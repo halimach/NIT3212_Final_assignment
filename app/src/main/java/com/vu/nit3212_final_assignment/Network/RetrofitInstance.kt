@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.Network
+package com.vu.nit3212_final_assignment.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -8,8 +8,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 object RetrofitInstance {
-
-    private val BASE_URL = "https://vu-nit3213-api.onrender.com/"
+    private const val BASE_URL = "https://vu-nit3213-api.onrender.com/"
 
     private val logging = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY

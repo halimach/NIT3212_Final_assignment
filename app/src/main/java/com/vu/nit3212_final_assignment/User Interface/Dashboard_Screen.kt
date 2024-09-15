@@ -1,40 +1,35 @@
-package com.vu.nit3212_final_assignment.User
+
+package com.vu.nit3212_final_assignment.user
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.assessment2.R
-import com.example.assessment2.data.Entity
-import com.example.assessment2.viewmodel.DashboardViewModel
-import dagger.hilt.android.AndroidEntryPoint
+import com.vu.nit3212_final_assignment.DashboardViewModel
+import com.vu.nit3212_final_assignment.R
+import com.vu.nit3212_final_assignment.User.Entity_Screen
+import com.vu.nit3212_final_assignment.data.Entity
 
-
-@AndroidEntryPoint
-class Dashboard_Screen : AppCompatActivity() {
-
+class Dashboard_Screen :AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
-    private lateinit var entityAdapter: EntityAdapter
-
-
-    private val dashboardViewModel: DashboardViewModel by viewModels()
+    private lateinit var Entity_Adapter: EntityAdapter
+    private lateinit var dashboardViewModel: DashboardViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
-
+        setContentView(R.layout.dashboard)
 
         recyclerView = findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
+        Entity_Adapter = EntityAdapter(emptyList()) { entity -> onEntityClick(entity) }
+        recyclerView.adapter = Entity_Adapter
 
-        entityAdapter = EntityAdapter(emptyList()) { entity -> onEntityClick(entity) }
-        recyclerView.adapter = entityAdapter
+        dashboardViewModel = DashboardViewModel() // Initialize manually
 
         val keypass = intent.getStringExtra("keypass")
-
         if (keypass != null) {
             fetchDashboardData(keypass)
         } else {
@@ -43,24 +38,19 @@ class Dashboard_Screen : AppCompatActivity() {
     }
 
     private fun fetchDashboardData(keypass: String) {
-
         dashboardViewModel.getDashboardData(keypass)
-
-
-        dashboardViewModel.dashboardData.observe(this) { dashboardResponse ->
-            if (dashboardResponse != null) {
-
-                entityAdapter.updateList(dashboardResponse.entities)
+        dashboardViewModel.dashboardData.observe(this) { dashboardOutput ->
+            if (dashboardOutput != null) {
+                Entity_Adapter.updateList(dashboardOutput)
             } else {
-
                 Toast.makeText(this, "Data unable to load", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun onEntityClick(entity: Entity) {
-        val intent = Intent(this, DetailsActivity::class.java)
-        intent.putExtra("selectedEntity", entity)  // Pass the Parcelable entity
+        val intent = Intent(this, Entity_Screen::class.java)
+        intent.putExtra("selectedEntity", entity)
         startActivity(intent)
     }
 }

@@ -6,32 +6,36 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.assessment2.R
-import com.example.assessment2.viewmodel.LoginViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.vu.nit3212_final_assignment.R
-import dagger.hilt.android.AndroidEntryPoint
+import com.vu.nit3212_final_assignment.network.RetrofitInstance
+import com.vu.nit3212_final_assignment.repository.Login_Api
+import com.vu.nit3212_final_assignment.viewmodel.LoginViewModelFactory
+import com.vu.nit3212_final_assignment.user.Dashboard_Screen
 
-@AndroidEntryPoint
+
 class Login_screen : AppCompatActivity() {
 
-
-    private val loginViewModel: LoginViewModel by viewModels()
+    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_screen)
 
+        // Manually instantiate Login_Api
+        val loginApi = Login_Api(RetrofitInstance.apiService)
+
+        // Use ViewModelFactory to create LoginViewModel
+        val factory = LoginViewModelFactory(loginApi)
+        loginViewModel = ViewModelProvider(this, factory).get(LoginViewModel::class.java)
 
         val usernameEditText = findViewById<EditText>(R.id.username)
         val passwordEditText = findViewById<EditText>(R.id.password)
 
-
         findViewById<Button>(R.id.login_button).setOnClickListener {
             val username = usernameEditText.text.toString()
             val password = passwordEditText.text.toString()
-
 
             if (username.isNotEmpty() && password.isNotEmpty()) {
                 loginViewModel.login(username, password)
@@ -40,14 +44,13 @@ class Login_screen : AppCompatActivity() {
             }
         }
 
+        // Observe login result from the ViewModel
         loginViewModel.loginResult.observe(this) { loginResponse ->
             if (loginResponse != null) {
-
                 val keypass = loginResponse.keypass
                 Log.d("LoginActivity", "Login successful: keypass = $keypass")
                 startDashboardActivity(keypass)
             } else {
-                // Login failed
                 Log.e("LoginActivity", "Login failed")
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
             }

@@ -1,17 +1,16 @@
 package com.vu.nit3212_final_assignment.User
+
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.example.assessment2.R
-import com.example.assessment2.data.Entity
-import dagger.hilt.android.AndroidEntryPoint
+import com.vu.nit3212_final_assignment.R
+import com.vu.nit3212_final_assignment.data.Entity
 
-@AndroidEntryPoint
 class Entity_Screen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        setContentView(R.layout.entity_details)
 
         val selectedEntity = intent.getParcelableExtra<Entity>("selectedEntity")
 
@@ -26,7 +25,7 @@ class Entity_Screen : AppCompatActivity() {
             itemTwo.text = it.itemTwo
             itemThree.text = it.itemThree
             itemFour.text = it.itemFour
-            itemFive.text = it.itemFive
+
         }
     }
 }
