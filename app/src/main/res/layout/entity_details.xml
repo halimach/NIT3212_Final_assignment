@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- TextView to display the sport name -->
+
     <TextView
         android:id="@+id/sportName"
         android:layout_width="0dp"
@@ -14,6 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TextView to display the player count -->
 
     <TextView
         android:id="@+id/playerCount"
@@ -24,6 +28,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- TextView to display the field type -->
+
     <TextView
         android:id="@+id/fieldType"
         android:layout_width="0dp"
@@ -33,6 +39,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- TextView to display if the sport is an Olympic sport -->
+
     <TextView
         android:id="@+id/olympicSport"
         android:layout_width="0dp"
@@ -41,6 +49,8 @@
         app:layout_constraintTop_toBottomOf="@id/fieldType"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- TextView to display the description -->
 
     <TextView
         android:id="@+id/description"
