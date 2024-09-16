@@ -12,18 +12,18 @@ import com.squareup.moshi.Json
 //  description Description of the entity
 data class Entity(
     @Json(name = "sportName") val sportName: String,
-    @Json(name = "playerCount") val playerCount: String,
+    @Json(name = "playerCount") val playerCount: Int,
     @Json(name = "fieldType") val fieldType: String,
-    @Json(name = "olympicSport") val olympicSport: String,
+    @Json(name = "olympicSport") val olympicSport: Boolean,
     @Json(name = "description") val description: String
 ) : Parcelable {
 //Constructor to create an [Entity] from a [Parcel].
 
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
+        playerCount = parcel.readInt(),
         parcel.readString() ?: "",
-        parcel.readString() ?: "",
-        parcel.readString() ?: "",
+        parcel.readByte() != 0.toByte(),
         parcel.readString() ?: ""
     )
 //Writes the object's data to the provided [Parcel].
@@ -32,9 +32,9 @@ data class Entity(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(sportName)
-        parcel.writeString(playerCount)
+        parcel.writeInt(playerCount)
         parcel.writeString(fieldType)
-        parcel.writeString(olympicSport)
+        parcel.writeByte(if (olympicSport) 1 else 0) // Write as Boolean
         parcel.writeString(description)
     }
 //Describes the contents of the [Parcel].

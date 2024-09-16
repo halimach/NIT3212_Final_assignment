@@ -1,9 +1,9 @@
-package com.vu.nit3212_final_assignment.viewmodel
+package com.vu.nit3212_final_assignment.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.vu.nit3212_final_assignment.repository.Login_Api
-import com.vu.nit3212_final_assignment.user.Remodelling
+import com.vu.nit3212_final_assignment.ui.LoginViewModel
 
 //Factory class for creating instances of [Remodelling] ViewModel.
 //loginApi The API service used for login operations.
@@ -18,9 +18,9 @@ class LoginViewModelFactory(private val loginApi: Login_Api) : ViewModelProvider
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         // Check if the ViewModel class is of type Remodelling
-        if (modelClass.isAssignableFrom(Remodelling::class.java)) {
+        if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             // Create and return an instance of Remodelling ViewModel
-            return Remodelling(loginApi) as T
+            return LoginViewModel(loginApi) as T
         }
         // Throw an exception if the ViewModel class is unknown
         throw IllegalArgumentException("Unknown ViewModel class")

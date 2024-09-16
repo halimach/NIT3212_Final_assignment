@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NIT3212_Final_assignment"
         tools:targetApi="31">
-        <activity android:name=".User.Loginscreen"
+        <activity android:name=".ui.Loginscreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +25,8 @@
 
         <activity android:name=".MainActivity">
         </activity>
-        <activity android:name=".User.DashboardActivity" />
-        <activity android:name=".User.EntityScreen" />
+        <activity android:name=".ui.DashboardActivity" />
+        <activity android:name=".ui.EntityScreen" />
 
 
 

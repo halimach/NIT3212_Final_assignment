@@ -1,17 +1,18 @@
-package com.vu.nit3212_final_assignment.user
+package com.vu.nit3212_final_assignment.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vu.nit3212_final_assignment.Data.LoginResponse
+import com.vu.nit3212_final_assignment.data.LoginResponse
+//import com.vu.nit3212_final_assignment.data.LoginResponse // Fixed import
 import com.vu.nit3212_final_assignment.repository.Login_Api
 import kotlinx.coroutines.launch
 
-//ViewModel for handling user login operations.
+// ViewModel for handling user login operations.
 // loginApi: The API service for performing login operations.
 
-class Remodelling(private val loginApi: Login_Api) : ViewModel() {
+class LoginViewModel(private val loginApi: Login_Api) : ViewModel() {
 
     // LiveData to hold the login result
     private val _loginResult = MutableLiveData<LoginResponse?>()

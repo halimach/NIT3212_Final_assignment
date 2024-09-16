@@ -2,7 +2,7 @@ package com.vu.nit3212_final_assignment.data
 
 
 import com.squareup.moshi.Json
-import com.vu.nit3212_final_assignment.data.Entity
+
 //Data class representing the output of a dashboard API response.
 data class Dashboard_Output(
 //    List of entities returned by the API.Each

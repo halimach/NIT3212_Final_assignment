@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.dependency
+package com.vu.nit3212_final_assignment.di
 
 
 import com.vu.nit3212_final_assignment.network.ApiService

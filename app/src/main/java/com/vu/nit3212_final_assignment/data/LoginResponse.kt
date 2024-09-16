@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.Data
+package com.vu.nit3212_final_assignment.data
 import com.squareup.moshi.Json
 //Data class representing the response received after a login attempt.
 // This class is used to encapsulate the data returned from the server upon successful authentication.

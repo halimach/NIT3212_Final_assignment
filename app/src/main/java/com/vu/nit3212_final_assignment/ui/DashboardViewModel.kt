@@ -1,11 +1,11 @@
-package com.vu.nit3212_final_assignment
+package com.vu.nit3212_final_assignment.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.vu.nit3212_final_assignment.Respositoryimport.dashboard_api
 import com.vu.nit3212_final_assignment.data.Entity
+import com.vu.nit3212_final_assignment.repository.dashboard_api
 import kotlinx.coroutines.launch
 
 //ViewModel class responsible for fetching and managing dashboard data.

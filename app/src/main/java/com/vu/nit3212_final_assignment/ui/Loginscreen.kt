@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.User
+package com.vu.nit3212_final_assignment.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,18 +8,18 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.vu.nit3212_final_assignment.Data.LoginResponse
+import com.vu.nit3212_final_assignment.data.LoginResponse
 import com.vu.nit3212_final_assignment.R
+import com.vu.nit3212_final_assignment.ui.DashboardActivity
 import com.vu.nit3212_final_assignment.network.RetrofitInstance
 import com.vu.nit3212_final_assignment.repository.Login_Api
-import com.vu.nit3212_final_assignment.user.Remodelling
-import com.vu.nit3212_final_assignment.viewmodel.LoginViewModelFactory
+import com.vu.nit3212_final_assignment.ui.LoginViewModel
+import com.vu.nit3212_final_assignment.ui.LoginViewModelFactory
 
-//Activity for user login. Handles user input, initiates login, and navigates to the dashboard upon successful login.
-
+// Activity for user login. Handles user input, initiates login, and navigates to the dashboard upon successful login.
 class Loginscreen : AppCompatActivity() {
 
-    private lateinit var loginViewModel: Remodelling
+    private lateinit var loginViewModel: LoginViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ class Loginscreen : AppCompatActivity() {
 
         // Create a ViewModelFactory and initialize the ViewModel
         val factory = LoginViewModelFactory(loginApi)
-        loginViewModel = ViewModelProvider(this, factory).get(Remodelling::class.java)
+        loginViewModel = ViewModelProvider(this, factory).get(LoginViewModel::class.java)
 
         // Get references to EditText fields for username and password
         val usernameEditText = findViewById<EditText>(R.id.username)
@@ -66,9 +66,8 @@ class Loginscreen : AppCompatActivity() {
         }
     }
 
-    //Start the DashboardActivity with the provided keypass.
-    //keypass The keypass obtained from a successful login.
-
+    // Start the DashboardActivity with the provided keypass.
+    // keypass: The keypass obtained from a successful login.
     private fun startDashboardActivity(keypass: String) {
         val intent = Intent(this, DashboardActivity::class.java)
         intent.putExtra("keypass", keypass)

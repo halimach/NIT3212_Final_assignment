@@ -1,6 +1,6 @@
 package com.vu.nit3212_final_assignment.network
 
-import com.vu.nit3212_final_assignment.Data.LoginResponse
+import com.vu.nit3212_final_assignment.data.LoginResponse
 import com.vu.nit3212_final_assignment.data.Login
 import com.vu.nit3212_final_assignment.data.Dashboard_Output
 import retrofit2.Response

@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.Respositoryimport
+package com.vu.nit3212_final_assignment.repository
 
 import com.vu.nit3212_final_assignment.network.ApiService
 import com.vu.nit3212_final_assignment.network.RetrofitInstance

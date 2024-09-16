@@ -1,4 +1,4 @@
-package com.vu.nit3212_final_assignment.User
+package com.vu.nit3212_final_assignment.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,10 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.vu.nit3212_final_assignment.DashboardViewModel
 import com.vu.nit3212_final_assignment.R
 import com.vu.nit3212_final_assignment.data.Entity
-import com.vu.nit3212_final_assignment.user.EntityAdapter
 
 // Activity class responsible for displaying the dashboard.
  //It shows a list of entities in a RecyclerView and handles navigation to the EntityScreen.
