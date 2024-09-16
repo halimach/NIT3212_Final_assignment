@@ -6,6 +6,9 @@ The NIT3212 Final Assignment is a mobile application designed to manage and disp
 Users can log in to the app, view a dashboard listing various sports entities, and view detailed information about each entity. 
 The application leverages Retrofit for network operations and Moshi for JSON parsing.
 
+## GitHub 
+Link : https://github.com/halimach/NIT3212_Final_assignment.git
+
 ## Prerequisites
 
 Before you start, ensure you have the following installed:
