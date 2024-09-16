@@ -22,16 +22,13 @@
             </intent-filter>
         </activity>
 
-        <!-- Define MainActivity but remove the launcher intent filter -->
+
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".User.DashboardActivity" />
         <activity android:name=".User.EntityScreen" />
 
-        <!--        <activity android:name=".User.Entity_Screen"/>-->
 
-
-        <!-- Define other activities here -->
 
 
     </application>

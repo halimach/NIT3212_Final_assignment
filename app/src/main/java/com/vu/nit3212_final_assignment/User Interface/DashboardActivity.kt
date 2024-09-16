@@ -59,10 +59,10 @@ class DashboardActivity : AppCompatActivity() {
         // Request dashboard data from the ViewModel
         dashboardViewModel.getDashboardData(keypass)
         // Observe the LiveData for changes and update the adapter with new data
-        dashboardViewModel.dashboardData.observe(this) { dashboardOutput ->
-            if (dashboardOutput != null) {
+        dashboardViewModel.dashboardData.observe(this) { entities ->
+            if (entities != null) {
                 // Update the adapter with the fetched data
-                entityAdapter.updateList(dashboardOutput)
+                entityAdapter.updateList(entities)
             } else {
                 // Show an error message if data loading fails
                 Toast.makeText(this, "Data unable to load", Toast.LENGTH_SHORT).show()
